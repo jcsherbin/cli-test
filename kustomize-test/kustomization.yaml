@@ -15,3 +15,6 @@ patches:
   target:
     kind: Deployment
     name: the-deployment
+- path: ./patches/1704292301_remediate_SecurityContext_allowPrivilegeEscalation_for_workload_the-deployment.yaml
+  target:
+    kind: Deployment
