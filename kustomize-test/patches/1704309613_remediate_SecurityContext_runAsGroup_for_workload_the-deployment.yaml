@@ -1,0 +1,8 @@
+kind: .
+metadata:
+  name: .
+spec: 
+  template:
+    spec: 
+      securityContext:
+        runAsGroup: 2
