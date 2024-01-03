@@ -15,3 +15,6 @@ patches:
   target:
     kind: Deployment
     name: the-deployment
+- path: ./patches/1704309588_remediate_SecurityContext_runAsGroup_for_workload_the-deployment.yaml
+  target:
+    kind: Deployment
