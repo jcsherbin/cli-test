@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: e2e
+
 ---
 apiVersion: v1
 kind: Namespace
@@ -88,7 +89,6 @@ spec:
           envFrom:
             - secretRef:
                 name: risky-secret
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -157,9 +157,7 @@ spec:
             - containerPort: 6379
               name: redis
               protocol: TCP
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -187,7 +185,6 @@ spec:
               value: DEVELOPMENT
             - name: DB_HOST
               value: jenkins.test
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -209,7 +206,6 @@ spec:
       containers:
         - name : ubuntu-container
           image: ubuntu/trusty
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -252,7 +248,6 @@ spec:
       containers:
         - name : orientdb-container
           image: orientdb
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -274,7 +269,6 @@ spec:
       containers:
         - name : kubectl-container
           image: d3fk/kubectl
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -296,7 +290,6 @@ spec:
       containers:
         - name : node-container
           image: node:latest
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -318,14 +311,13 @@ spec:
       containers:
         - name : mariadb-container
           image: mariadb:latest   
-
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     component: alpine
-  name: alpine-deployment 
+  name: alpine-deployment
   namespace: e2e
 spec:
   replicas: 1
@@ -339,11 +331,9 @@ spec:
     spec:
       serviceAccountName: default
       containers:
-        - name : alpine-container
-          image: alpine:latest        
-
+      - name: alpine-container
+        image: alpine:latest
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -364,7 +354,6 @@ spec:
       containers:
         - name : nginx-container
           image: nginx:latest  
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -386,7 +375,6 @@ spec:
       containers:
         - name : rabbitmq-container
           image: rabbitmq:latest  
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -450,7 +438,6 @@ spec:
       containers:
         - name : logstash-container
           image: logstash:latest    
-
 ---
 apiVersion: apps/v1
 kind: Deployment
